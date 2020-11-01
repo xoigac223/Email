@@ -53,6 +53,8 @@ public class EmailAdapter extends BaseAdapter {
             viewHolder.text_time = convertView.findViewById(R.id.text_time);
             viewHolder.text_bacham = convertView.findViewById(R.id.text_bacham);
             viewHolder.star = convertView.findViewById(R.id.star);
+
+            convertView.setTag(viewHolder);
         } else viewHolder = (ViewHolder) convertView.getTag();
 
         Email email = emails.get(position);
@@ -78,7 +80,6 @@ public class EmailAdapter extends BaseAdapter {
         viewHolder.text_time.setText(email.getTime());
         return convertView;
     }
-
     private class ViewHolder {
         TextView text_view, text_sender, text_title, text_content, text_time, text_bacham;
         ImageButton star;
